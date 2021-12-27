@@ -23,8 +23,8 @@ message EventsubMessage {
 }
 
 message Registration {
-  string channel = 1;
-  string callback = 2;
+  string id = 1;
+  string callback = 3;
 }
 
 message Empty {
