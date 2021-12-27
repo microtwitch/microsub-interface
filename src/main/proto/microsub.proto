@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package de.com.fdm.grpc.microsub;
+
+option java_multiple_files = true;
+option java_package = "de.com.fdm.grpc.microsub.lib";
+option java_outer_classname = "MicrosubProto";
+
+service Consumer {
+  rpc consume(EventsubMessage) returns(Empty) {
+  }
+}
+
+service Microsub {
+  rpc register(Registration) returns(Empty){
+  }
+}
+
+message EventsubMessage {
+  string channel = 1;
+  string name = 2;
+  string text = 3;
+}
+
+message Registration {
+  string channel = 1;
+  string callback = 2;
+}
+
+message Empty {
+}
