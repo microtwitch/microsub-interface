@@ -17,9 +17,11 @@ service Microsub {
 }
 
 message EventsubMessage {
-  string channel = 1;
-  string name = 2;
-  string text = 3;
+  string broadcaster_user_id = 1;
+  string broadcaster_user_name = 2;
+  string event_user_id = 3;
+  string event_user_name = 4;
+  string event_type = 5;
 }
 
 message Registration {
