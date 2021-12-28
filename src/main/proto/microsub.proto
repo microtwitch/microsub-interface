@@ -14,6 +14,9 @@ service Consumer {
 service Microsub {
   rpc register(Registration) returns(Empty){
   }
+
+  rpc delete(Deletion) returns(Empty){
+  }
 }
 
 message EventsubMessage {
@@ -26,7 +29,12 @@ message EventsubMessage {
 
 message Registration {
   string id = 1;
-  string callback = 3;
+  string callback = 2;
+}
+
+message Deletion {
+  string id = 1;
+  string callback = 2;
 }
 
 message Empty {
