@@ -19,6 +19,11 @@ service Microsub {
   }
 }
 
+enum Type {
+  FOLLOW = 0;
+  SUB = 1;
+}
+
 message EventsubMessage {
   string broadcaster_user_id = 1;
   string broadcaster_user_name = 2;
@@ -30,11 +35,13 @@ message EventsubMessage {
 message Registration {
   string id = 1;
   string callback = 2;
+  Type type = 3;
 }
 
 message Deletion {
   string id = 1;
   string callback = 2;
+  Type type = 3;
 }
 
 message Empty {
